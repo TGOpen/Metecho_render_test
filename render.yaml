@@ -37,7 +37,7 @@ services:
           property: connectionString
   - type: redis
     name: metecho-redis
-    plan: free
+    plan: starter
     maxmemoryPolicy: noeviction
     ipAllowList: []
 
@@ -45,7 +45,7 @@ databases:
   - name: metecho_db
     databaseName: metecho_db
     user: metecho_db
-    plan: free
+    plan: starter
 
 envVarGroups:
 - name: metecho-env
@@ -75,7 +75,7 @@ envVarGroups:
     - key: GITHUB_CLIENT_SECRET
       sync: false
     - key: GITHUB_HOOK_SECRET
-      sync: false
+      generatevalue: true
     - key: PYTHON_VERSION
       value: 3.11.2
     - key: SFDX_CLIENT_CALLBACK_URL
