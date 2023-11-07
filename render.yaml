@@ -20,7 +20,7 @@ services:
   - type: worker
     name: metecho-worker
     env: python
-    plan: free
+    plan: starter
     buildCommand: .render/build.sh
     startCommand: honcho start -f Procfile_worker_all
     autoDeploy: true
