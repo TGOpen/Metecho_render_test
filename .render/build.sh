@@ -48,8 +48,27 @@ echo "################################################"
 echo "# Collecting Django static resources"
 echo "################################################"
 python manage.py collectstatic --no-input
-if [[ $CREATE_SUPERUSER ]];
-then
-  python manage.py createsuperuser --no-input
-fi
+
+echo ""
+echo "################################################"
+echo "# making super user"
+echo "################################################"
+python manage.py createsuperuser --no-input
+
+echo ""
+echo "################################################"
+echo "# Collecting Django static resources"
+echo "################################################"
+
+from django.contrib.auth.models import User
+user = User.objects.get(username="TGOpen")
+user.is_staff = True
+user.is_admin = True
+user.is_superuser = True
+user.save()
+
+User.objects.filter(pk=1001).update(is_superuser=True, is_staff=True)
+
+
+
 
