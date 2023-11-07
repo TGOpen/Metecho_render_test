@@ -75,7 +75,7 @@ envVarGroups:
     - key: GITHUB_CLIENT_SECRET
       sync: false
     - key: GITHUB_HOOK_SECRET
-      generateValue: true
+      sync: false
     - key: PYTHON_VERSION
       value: 3.11.2
     - key: SFDX_CLIENT_CALLBACK_URL
