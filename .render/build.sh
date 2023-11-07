@@ -49,16 +49,7 @@ echo "# Collecting Django static resources"
 echo "################################################"
 python manage.py collectstatic --no-input
 
-echo ""
-echo "################################################"
-echo "# making super user"
-echo "################################################"
-python manage.py createsuperuser --no-input
 
-echo ""
-echo "################################################"
-echo "# Collecting Django static resources"
-echo "################################################"
 
 
 
