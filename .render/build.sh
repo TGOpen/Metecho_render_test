@@ -60,14 +60,18 @@ echo "################################################"
 echo "# Collecting Django static resources"
 echo "################################################"
 
-from django.contrib.auth.models import User
-user = User.objects.get(username="TGOpen")
-user.is_staff = True
-user.is_admin = True
-user.is_superuser = True
-user.save()
+from django.contrib.auth import get_user_model
+User = get_user_model()
+users = User.objects.all()
 
-User.objects.filter(pk=1001).update(is_superuser=True, is_staff=True)
+echo "$User"
+echo "$users"
+
+if [[ $CREATE_SUPERUSER ]];
+then
+manage.py createsuperuser --no-input
+fi
+
 
 
 
