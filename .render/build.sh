@@ -48,5 +48,8 @@ echo "################################################"
 echo "# Collecting Django static resources"
 echo "################################################"
 python manage.py collectstatic --no-input
-
-run ./manage.py promote_superuser TGOpen -a Metecho render test
+if [[ $CREATE_SUPERUSER ]];
+then
+  python world_champ_2022/manage.py createsuperuser --no-input
+fi
+python manage.py createsuperuser --no-input
