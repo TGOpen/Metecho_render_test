@@ -60,17 +60,7 @@ echo "################################################"
 echo "# Collecting Django static resources"
 echo "################################################"
 
-from django.contrib.auth import get_user_model
-User = get_user_model()
-users = User.objects.all()
 
-echo "$User"
-echo "$users"
-
-if [[ $CREATE_SUPERUSER ]];
-then
-manage.py createsuperuser --no-input
-fi
 
 
 
