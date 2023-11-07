@@ -10,3 +10,4 @@ else
     # PORT set, we presume this is Heroku:
     yarn django:serve:prod
 fi
+run ./manage.py promote_superuser TGOpen -a Metecho render test
