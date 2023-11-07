@@ -2,7 +2,7 @@ services:
   - type: web
     name: metecho
     env: python
-    plan: free
+    plan: starter
     buildCommand: .render/build.sh
     startCommand: ./start-server.sh
     autoDeploy: true
